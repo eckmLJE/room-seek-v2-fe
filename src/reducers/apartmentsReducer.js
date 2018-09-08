@@ -5,6 +5,8 @@ const apartmentsReducer = (
   action
 ) => {
   switch (action.type) {
+    case "SET_APARTMENTS":
+      return { ...state, apartments: action.apartments };
     default:
       return state;
   }

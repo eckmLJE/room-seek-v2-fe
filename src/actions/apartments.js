@@ -1,4 +1,9 @@
-export const setApartments = apartments => ({
-  type: "SET_APARTMENTS",
+export const getApartments = apartments => ({
+  type: "GET_APARTMENTS",
   apartments
+});
+
+export const setCurrentApartment = id => ({
+  type: "SET_CURRENT_APARTMENT",
+  id
 });

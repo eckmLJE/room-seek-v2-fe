@@ -1,12 +1,15 @@
 const apartmentsReducer = (
   state = {
-    apartments: []
+    apartments: [],
+    currentApartment: 1
   },
   action
 ) => {
   switch (action.type) {
-    case "SET_APARTMENTS":
+    case "GET_APARTMENTS":
       return { ...state, apartments: action.apartments };
+    case "SET_CURRENT_APARTMENT":
+      return { ...state, currentApartment: action.id };
     default:
       return state;
   }

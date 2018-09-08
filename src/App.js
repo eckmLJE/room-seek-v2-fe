@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import "./App.css";
 
@@ -6,12 +6,12 @@ import HeaderBar from "./components/HeaderBar";
 import FilterBox from "./components/FilterBox";
 import FloorPlan from "./components/FloorPlan";
 
-import { setApartments } from "./actions/apartments";
+import { getApartments } from "./actions/apartments";
 import { apartments } from "./database/apartments";
 
 class App extends Component {
   componentDidMount = () => {
-    this.props.setApartments(apartments);
+    this.props.getApartments(apartments);
   };
 
   render() {
@@ -19,23 +19,29 @@ class App extends Component {
       <div className="container">
         <HeaderBar />
         <div className="row">
-          <FilterBox />
-          <FloorPlan />
+          {this.props.apartments.length ? (
+            <Fragment>
+              <FilterBox />
+              <FloorPlan />
+            </Fragment>
+          ) : (
+            <div className="col-1">Loading GIF</div>
+          )}
         </div>
       </div>
     );
   }
 }
 
-// const mapStateToProps = state => ({
-//   apartments: state.apartments
-// });
+const mapStateToProps = state => ({
+  apartments: state.apartments.apartments
+});
 
 const mapDispatchToProps = dispatch => ({
-  setApartments: apartments => dispatch(setApartments(apartments))
+  getApartments: apartments => dispatch(getApartments(apartments))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(App);

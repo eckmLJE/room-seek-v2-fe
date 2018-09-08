@@ -1,6 +1,6 @@
 export const apartments = [
     {
-        name: 1,
+        id: 1,
         bedrooms: [
             {
                 name: "a",
@@ -35,7 +35,7 @@ export const apartments = [
         ]
     },
     {
-        name: 2,
+        id: 2,
         bedrooms: [
             {
                 name: "a",

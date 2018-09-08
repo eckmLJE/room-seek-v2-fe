@@ -41,3 +41,7 @@ row::after {
     width: 100%;
   }
 }
+
+.floorplan-svg {
+  margin: auto;
+}

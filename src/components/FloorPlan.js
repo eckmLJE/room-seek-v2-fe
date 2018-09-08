@@ -10,24 +10,21 @@ class FloorPlan extends Component {
 
   storeBedrooms = () => {
     let svgBedrooms = [];
-    let xOffset = 0;
-    console.log(this.props.apartments);
+    let xOffset = 10;
     const currentApartment = this.props.apartments.find(
       apartment => apartment.id === this.props.currentApartment
     );
-    console.log(currentApartment);
     currentApartment.bedrooms.forEach(bedroom => {
-      svgBedrooms.push(<Bedroom xOffset={xOffset} id={bedroom.name} />);
-      xOffset = xOffset + 60;
+      svgBedrooms.push(<Bedroom xOffset={xOffset} id={bedroom.name} key={bedroom.name} />);
+      xOffset = xOffset + 80;
     });
     this.setState({ svgBedrooms: svgBedrooms });
   };
 
   render() {
-    console.log(this.state.svgBedrooms);
     return (
       <div className="col-2">
-        <svg viewBox="0 0 500 300">{this.state.svgBedrooms}</svg>
+        <svg className= "floorplan-svg" viewBox="0 0 500 300">{this.state.svgBedrooms}</svg>
       </div>
     );
   }

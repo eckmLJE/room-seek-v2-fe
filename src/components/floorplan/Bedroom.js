@@ -5,12 +5,12 @@ const Bedroom = props => {
     <rect
       className={`${props.id}`}
       x={`${props.xOffset}`}
-      y="0"
-      width="50"
-      height="50"
+      y="10"
+      width="70"
+      height="70"
       stroke="black"
       fill="transparent"
-      stroke-width="2"
+      strokeWidth="2"
     />
   );
 };

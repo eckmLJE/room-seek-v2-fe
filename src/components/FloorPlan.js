@@ -4,27 +4,29 @@ import { connect } from "react-redux";
 import Bedroom from "./floorplan/Bedroom";
 
 class FloorPlan extends Component {
-  state = { svgBedrooms: [] };
-
-  componentDidMount = () => this.storeBedrooms();
-
-  storeBedrooms = () => {
+  drawBedrooms = () => {
     let svgBedrooms = [];
     let xOffset = 10;
-    const currentApartment = this.props.apartments.find(
-      apartment => apartment.id === this.props.currentApartment
-    );
-    currentApartment.bedrooms.forEach(bedroom => {
-      svgBedrooms.push(<Bedroom xOffset={xOffset} id={bedroom.name} key={bedroom.name} />);
+    this.props.currentBedrooms.forEach(bedroom => {
+      svgBedrooms.push(
+        <Bedroom
+          bedroom={bedroom}
+          xOffset={xOffset}
+          id={bedroom.name}
+          key={bedroom.name}
+        />
+      );
       xOffset = xOffset + 80;
     });
-    this.setState({ svgBedrooms: svgBedrooms });
+    return svgBedrooms;
   };
 
   render() {
     return (
       <div className="col-2">
-        <svg className= "floorplan-svg" viewBox="0 0 500 300">{this.state.svgBedrooms}</svg>
+        <svg className="floorplan-svg" viewBox="0 0 500 300">
+          {this.drawBedrooms()}
+        </svg>
       </div>
     );
   }
@@ -32,7 +34,8 @@ class FloorPlan extends Component {
 
 const mapStateToProps = state => ({
   apartments: state.apartments.apartments,
-  currentApartment: state.apartments.currentApartment
+  currentApartment: state.apartments.currentApartment,
+  currentBedrooms: state.apartments.currentBedrooms
 });
 
 // const mapDispatchToProps = dispatch => ({

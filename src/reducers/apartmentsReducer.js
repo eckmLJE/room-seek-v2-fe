@@ -1,7 +1,13 @@
+const getBedrooms = (apartments, id) => {
+  const apartment = apartments.find(apartment => apartment.id === id);
+  return apartment.bedrooms;
+};
+
 const apartmentsReducer = (
   state = {
     apartments: [],
-    currentApartment: 1
+    currentApartment: null,
+    currentBedrooms: []
   },
   action
 ) => {
@@ -9,7 +15,11 @@ const apartmentsReducer = (
     case "GET_APARTMENTS":
       return { ...state, apartments: action.apartments };
     case "SET_CURRENT_APARTMENT":
-      return { ...state, currentApartment: action.id };
+      return {
+        ...state,
+        currentApartment: action.id,
+        currentBedrooms: getBedrooms(state.apartments, action.id)
+      };
     default:
       return state;
   }

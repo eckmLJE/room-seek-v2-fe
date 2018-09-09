@@ -3,7 +3,10 @@ export const getApartments = apartments => ({
   apartments
 });
 
-export const setCurrentApartment = id => ({
-  type: "SET_CURRENT_APARTMENT",
-  id
-});
+export const setCurrentApartment = id => {
+  console.log(id);
+  return {
+    type: "SET_CURRENT_APARTMENT",
+    id
+  };
+};

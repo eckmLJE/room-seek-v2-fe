@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import { bedroomKey } from "../../database/apartments";
 
 const addMonths = (date, months) => {
   date.setMonth(date.getMonth() + months);
@@ -18,27 +19,54 @@ class Bedroom extends Component {
     return endDate <= filterDate ? true : false;
   };
 
-  render() {
-    console.log(this.checkFilters());
+  drawBedroom = () => {
+    const bedroom = this.props.bedroom;
+    const key = bedroomKey.find(key => key.name === bedroom.name);
     return (
-      <rect
-        // className={this.checkFilters()}
-        x={`${this.props.xOffset}`}
-        y="10"
-        width="70"
-        height="70"
-        stroke="black"
-        fill={this.checkFilters() ? "green" : "transparent"}
-        strokeWidth="2"
-      />
+      <Fragment>
+        <rect
+          x={key.x}
+          y={key.y}
+          width={key.width}
+          height={key.height}
+          stroke="black"
+          fill={this.checkFilters() ? "green" : "transparent"}
+          strokeWidth="2"
+        />
+        <text
+          x={key.x + 10}
+          y={key.y + 20}
+          fontFamily="Verdana"
+          fontSize="10"
+          fill="black"
+        >
+          Bedroom {this.props.currentApartment}
+          {bedroom.name}
+        </text>
+        <text
+          x={key.x + 10}
+          y={key.y + 35}
+          fontFamily="Verdana"
+          fontSize="10"
+          fill="black"
+        >
+          ${bedroom.rent}
+          /mo.
+        </text>
+      </Fragment>
     );
+  };
+
+  render() {
+    return <Fragment>{this.drawBedroom()}</Fragment>;
   }
 }
 
 const mapStateToProps = state => ({
   maxRent: state.filters.maxRent,
   months: state.filters.months,
-  petFriendly: state.filters.petFriendly
+  petFriendly: state.filters.petFriendly,
+  currentApartment: state.apartments.currentApartment
 });
 
 export default connect(

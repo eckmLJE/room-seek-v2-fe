@@ -4,7 +4,7 @@
 
 .container {
   margin: auto;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .header-bar {
@@ -22,11 +22,11 @@ row::after {
 }
 
 .col-1 {
-  width: 40%;
+  width: 30%;
 }
 
 .col-2 {
-  width: 60%;
+  width: 70%;
 }
 
 [class*="col-"] {

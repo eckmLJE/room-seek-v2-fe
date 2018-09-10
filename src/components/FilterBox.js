@@ -70,7 +70,12 @@ class FilterBox extends Component {
               <div>Term: {this.getBedroomDetail().term} months</div>
             </div>
           ) : (
-            <p>Select a Bedroom Below</p>
+            <div>
+              <p>Select an Apartment with the numbers to the left</p>
+              <p>Set your Filters</p>
+              <p>Bedrooms that fit the filters are highlighted</p>
+              <p>Click a bedroom to view its details</p>
+            </div>
           )}
         </div>
       </div>

@@ -65,9 +65,9 @@ class FilterBox extends Component {
                 Bedroom: {this.props.currentApartment}
                 {this.getBedroomDetail().name}
               </div>
-              <div>Rent: {this.getBedroomDetail().rent}</div>
+              <div>Rent: ${this.getBedroomDetail().rent}</div>
               <div>Lease Start: {this.getBedroomDetail().start}</div>
-              <div>Term: {this.getBedroomDetail().term}</div>
+              <div>Term: {this.getBedroomDetail().term} months</div>
             </div>
           ) : (
             <p>Select a Bedroom Below</p>

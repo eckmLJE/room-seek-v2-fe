@@ -17,28 +17,32 @@ class FilterBox extends Component {
     return (
       <div className="col-1">
         <div className="apt-buttons" onClick={this.handleAptClick}>
-          <button name="1" />
-          <button name="2" />
-          <button name="3" />
-          <button name="4" />
+          <button name="1">1</button>
+          <button name="2">2</button>
+          <button name="3">3</button>
+          <button name="4">4</button>
         </div>
         <div className="filters">
-          <select onChange={e => this.props.setRentFilter(e.target.value)}>
-            <option value="1500">1500 or Less</option>
-            <option value="1250">1250 or Less</option>
-            <option value="1000">1000 or Less</option>
-          </select>
-          <br />
-          <select onChange={e => this.props.setMonthsFilter(e.target.value)}>
-            <option value="6">Within 6 Months</option>
-            <option value="3">Within 3 Months</option>
-            <option value="1">Within 1 Month</option>
-          </select>
-          <br />
-          <select onChange={e => this.props.setPetFilter(e.target.value)}>
-            <option value="true">Pet Friendly</option>
-            <option value="false">Not Pet Friendly</option>
-          </select>
+          <div className="select-box">
+            <select onChange={e => this.props.setRentFilter(e.target.value)}>
+              <option value="1500">1500 or Less</option>
+              <option value="1250">1250 or Less</option>
+              <option value="1000">1000 or Less</option>
+            </select>
+          </div>
+          <div className="select-box">
+            <select onChange={e => this.props.setMonthsFilter(e.target.value)}>
+              <option value="6">Within 6 Months</option>
+              <option value="3">Within 3 Months</option>
+              <option value="1">Within 1 Month</option>
+            </select>
+          </div>
+          <div className="select-box">
+            <select onChange={e => this.props.setPetFilter(e.target.value)}>
+              <option value="true">Pet Friendly</option>
+              <option value="false">Not Pet Friendly</option>
+            </select>
+          </div>
         </div>
       </div>
     );

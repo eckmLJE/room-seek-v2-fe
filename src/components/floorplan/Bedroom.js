@@ -20,6 +20,7 @@ class Bedroom extends Component {
   };
 
   drawBedroom = () => {
+    const check = this.checkFilters();
     const bedroom = this.props.bedroom;
     const key = bedroomKey.find(key => key.name === bedroom.name);
     return (
@@ -30,7 +31,7 @@ class Bedroom extends Component {
           width={key.width}
           height={key.height}
           stroke="black"
-          fill={this.checkFilters() ? "green" : "transparent"}
+          fill={check ? "#2c3e50" : "transparent"}
           strokeWidth="2"
         />
         <text
@@ -38,7 +39,7 @@ class Bedroom extends Component {
           y={key.y + 20}
           fontFamily="Verdana"
           fontSize="10"
-          fill="black"
+          fill={check ? "white" : "#2c3e50"}
         >
           Bedroom {this.props.currentApartment}
           {bedroom.name}
@@ -48,7 +49,7 @@ class Bedroom extends Component {
           y={key.y + 35}
           fontFamily="Verdana"
           fontSize="10"
-          fill="black"
+          fill={check ? "white" : "#2c3e50"}
         >
           ${bedroom.rent}
           /mo.

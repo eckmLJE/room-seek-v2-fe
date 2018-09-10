@@ -7,7 +7,8 @@ const apartmentsReducer = (
   state = {
     apartments: [],
     currentApartment: null,
-    currentBedrooms: []
+    currentBedrooms: [],
+    currentBedroom: null
   },
   action
 ) => {
@@ -19,6 +20,11 @@ const apartmentsReducer = (
         ...state,
         currentApartment: action.id,
         currentBedrooms: getBedrooms(state.apartments, action.id)
+      };
+    case "SET_CURRENT_BEDROOM":
+      return {
+        ...state,
+        currentBedroom: action.br
       };
     default:
       return state;

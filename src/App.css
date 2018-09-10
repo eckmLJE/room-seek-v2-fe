@@ -12,7 +12,7 @@
   background-color: #2c3e50;
   width: 100%;
   padding: 10px;
-  padding-left: 23px;
+  padding-left: 25px;
   margin-bottom: 5px;
   color: white;
   font-size: 1.5em;
@@ -25,11 +25,11 @@ row::after {
 }
 
 .col-1 {
-  width: 25%;
+  width: 100%;
 }
 
 .col-2 {
-  width: 75%;
+  width: 100%;
 }
 
 [class*="col-"] {
@@ -48,12 +48,22 @@ row::after {
   margin: auto;
 }
 
+.filters-buttons {
+  position: relative;
+  float: left;
+}
+
+.bedroom-detail {
+  margin-left: 200px;
+}
+
 .apt-buttons {
   padding: 10px;
+  padding-left: 16px;
 }
 
 .filters {
-  padding-left: 5px;
+  padding-left: 11px;
   position: relative;
 }
 
@@ -114,10 +124,9 @@ button {
   line-height: 20px;
 }
 
-
 /* bedroom SVG */
 
-/* .bedroom-avail:hover {
-  fill:#3a536b;
+.bedroom-avail:hover {
+  fill: #3a536b;
   cursor: pointer;
-} */
+}

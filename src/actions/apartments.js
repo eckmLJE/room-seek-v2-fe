@@ -9,3 +9,8 @@ export const setCurrentApartment = id => {
     id
   };
 };
+
+export const setCurrentBedroom = br => ({
+  type: "SET_CURRENT_BEDROOM",
+  br
+});

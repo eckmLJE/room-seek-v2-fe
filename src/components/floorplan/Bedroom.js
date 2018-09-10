@@ -2,9 +2,11 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { bedroomKey } from "../../database/apartments";
 
-import { enableHoverCard } from "../../actions/hovers";
-import { updateHoverXY } from "../../actions/hovers";
-import { disableHoverCard } from "../../actions/hovers";
+// import { enableHoverCard } from "../../actions/hovers";
+// import { updateHoverXY } from "../../actions/hovers";
+// import { disableHoverCard } from "../../actions/hovers";
+
+import { setCurrentBedroom } from "../../actions/apartments";
 
 const addMonths = (date, months) => {
   date.setMonth(date.getMonth() + months);
@@ -12,7 +14,6 @@ const addMonths = (date, months) => {
 };
 
 class Bedroom extends Component {
-  
   // handleHoverEnable = e => {
   //   this.props.enableHoverCard(this.props.currentApartment, e.target.id);
   // };
@@ -42,6 +43,7 @@ class Bedroom extends Component {
           // onMouseEnter={this.handleHoverEnable}
           // onMouseMove={this.handleHoverMove}
           // onMouseLeave={this.props.disableHoverCard}
+          onClick={() => this.props.setCurrentBedroom(bedroom.name)}
           id={bedroom.name}
           className={check ? "bedroom-avail" : "bedroom-not-avail"}
           x={key.x}
@@ -62,22 +64,12 @@ class Bedroom extends Component {
           {this.props.currentApartment}
           {bedroom.name}
         </text>
-        <text
-          x={key.x + 10}
-          y={key.y + 50}
-          fontFamily="Verdana"
-          fontSize="16"
-          fill={check ? "white" : "#2c3e50"}
-        >
-          ${bedroom.rent}
-          /mo.
-        </text>
       </Fragment>
     );
   };
 
   render() {
-    console.log("bedroom rendered")
+    console.log("bedroom rendered");
     return <Fragment>{this.drawBedroom()}</Fragment>;
   }
 }
@@ -90,9 +82,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  disableHoverCard: () => dispatch(disableHoverCard()),
-  enableHoverCard: (apt, br) => dispatch(enableHoverCard(apt, br)),
-  updateHoverXY: (x, y) => dispatch(updateHoverXY(x, y))
+  setCurrentBedroom: br => dispatch(setCurrentBedroom(br))
+  // disableHoverCard: () => dispatch(disableHoverCard()),
+  // enableHoverCard: (apt, br) => dispatch(enableHoverCard(apt, br)),
+  // updateHoverXY: (x, y) => dispatch(updateHoverXY(x, y))
 });
 
 export default connect(

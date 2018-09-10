@@ -185,7 +185,6 @@ export const bedroomKey = [
 
 const kitchenY = 213;
 const kitchenHeight = 22;
-
 const islandY = 165;
 
 export const furnitureRects = [
@@ -193,6 +192,8 @@ export const furnitureRects = [
     name: "kitchen bar",
     shapes: [
       {
+        name: "kitchen bar",
+        type: "rectangle",
         x: 135,
         y: kitchenY,
         width: 200,
@@ -204,6 +205,8 @@ export const furnitureRects = [
     name: "range",
     shapes: [
       {
+        name: "range rect",
+        type: "rectangle",
         x: 253,
         y: kitchenY,
         width: 35,
@@ -215,6 +218,8 @@ export const furnitureRects = [
     name: "kitchen island",
     shapes: [
       {
+        name: "island rect",
+        type: "rectangle",
         x: 175,
         y: islandY,
         width: 120,
@@ -226,6 +231,8 @@ export const furnitureRects = [
     name: "kitchen sink",
     shapes: [
       {
+        name: "sink rect",
+        type: "rectangle",
         x: 255,
         y: islandY + 5,
         width: 30,
@@ -237,6 +244,7 @@ export const furnitureRects = [
     name: "fridge",
     shapes: [
       {
+        type: "rectangle",
         name: "body",
         x: 135,
         y: kitchenY,
@@ -244,6 +252,7 @@ export const furnitureRects = [
         height: kitchenHeight
       },
       {
+        type: "rectangle",
         name: "door left",
         x: 135,
         y: kitchenY,
@@ -251,6 +260,7 @@ export const furnitureRects = [
         height: 3
       },
       {
+        type: "rectangle",
         name: "fridge door right",
         x: 160,
         y: kitchenY,
@@ -263,6 +273,8 @@ export const furnitureRects = [
     name: "living room rug",
     shapes: [
       {
+        name: "rug rect",
+        type: "rectangle",
         x: 200,
         y: 80,
         width: 100,
@@ -274,10 +286,12 @@ export const furnitureRects = [
     name: "coffee table",
     shapes: [
       {
+        name: "coffee table rect",
+        type: "rectangle",
         x: 237,
-        y: 90,
+        y: 92,
         width: 40,
-        height: 20
+        height: 18
       }
     ]
   },
@@ -285,10 +299,40 @@ export const furnitureRects = [
     name: "couch",
     shapes: [
       {
-        x: 227,
+        name: "couch body",
+        type: "rectangle",
+        x: 230,
         y: 120,
-        width: 60,
+        rx: 3,
+        ry: 3,
+        width: 55,
         height: 20
+      },
+      {
+        name: "couch inner body",
+        type: "rectangle",
+        x: 235,
+        y: 120,
+        rx: 3,
+        ry: 3,
+        width: 45,
+        height: 15
+      },
+      {
+        name: "cushion divider-1",
+        type: "line",
+        x1: 250,
+        x2: 250,
+        y1: 120,
+        y2: 135
+      },
+      {
+        name: "cushion divider-2",
+        type: "line",
+        x1: 265,
+        x2: 265,
+        y1: 120,
+        y2: 135
       }
     ]
   },
@@ -296,10 +340,24 @@ export const furnitureRects = [
     name: "chair",
     shapes: [
       {
+        name: "chair outer",
+        type: "rectangle",
         x: 205,
         y: 90,
+        rx: 3,
+        ry: 3,
         width: 20,
-        height: 20
+        height: 22
+      },
+      {
+        name: "chair inner",
+        type: "rectangle",
+        x: 210,
+        y: 93,
+        rx: 3,
+        ry: 3,
+        width: 15,
+        height: 16
       }
     ]
   }

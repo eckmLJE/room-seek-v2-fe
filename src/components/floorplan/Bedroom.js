@@ -36,19 +36,19 @@ class Bedroom extends Component {
         />
         <text
           x={key.x + 10}
-          y={key.y + 20}
+          y={key.y + 25}
           fontFamily="Verdana"
-          fontSize="10"
+          fontSize="16"
           fill={check ? "white" : "#2c3e50"}
         >
-          Bedroom {this.props.currentApartment}
+          {this.props.currentApartment}
           {bedroom.name}
         </text>
         <text
           x={key.x + 10}
-          y={key.y + 35}
+          y={key.y + 50}
           fontFamily="Verdana"
-          fontSize="10"
+          fontSize="16"
           fill={check ? "white" : "#2c3e50"}
         >
           ${bedroom.rent}

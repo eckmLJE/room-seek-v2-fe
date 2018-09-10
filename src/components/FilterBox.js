@@ -23,21 +23,21 @@ class FilterBox extends Component {
           <button name="4">4</button>
         </div>
         <div className="filters">
-          <div className="select-box">
+          <div className="select-box box-1">
             <select onChange={e => this.props.setRentFilter(e.target.value)}>
-              <option value="1500">1500 or Less</option>
-              <option value="1250">1250 or Less</option>
-              <option value="1000">1000 or Less</option>
+              <option value="1500">$1,500 or Less</option>
+              <option value="1250">$1,250 or Less</option>
+              <option value="1000">$1,000 or Less</option>
             </select>
           </div>
-          <div className="select-box">
+          <div className="select-box box-2">
             <select onChange={e => this.props.setMonthsFilter(e.target.value)}>
               <option value="6">Within 6 Months</option>
               <option value="3">Within 3 Months</option>
               <option value="1">Within 1 Month</option>
             </select>
           </div>
-          <div className="select-box">
+          <div className="select-box box-3">
             <select onChange={e => this.props.setPetFilter(e.target.value)}>
               <option value="true">Pet Friendly</option>
               <option value="false">Not Pet Friendly</option>

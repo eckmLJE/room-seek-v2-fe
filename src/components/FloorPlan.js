@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import Bedroom from "./floorplan/Bedroom";
+// import HoverCard from "./HoverCard";
+
 import { furnitureRects } from "../database/apartments";
 
 class FloorPlan extends Component {
@@ -87,7 +89,7 @@ class FloorPlan extends Component {
       <circle
         key={circ.name}
         cx={circ.cx}
-        xy={circ.cy}
+        cy={circ.cy}
         r={circ.r}
         stroke="black"
         strokeWidth="1"
@@ -105,6 +107,7 @@ class FloorPlan extends Component {
           {this.drawApartment()}
           {this.drawFurniture()}
         </svg>
+        {/* <HoverCard /> */}
       </div>
     );
   }

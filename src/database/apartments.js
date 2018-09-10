@@ -209,8 +209,64 @@ export const furnitureRects = [
         type: "rectangle",
         x: 253,
         y: kitchenY,
-        width: 35,
+        width: 30,
         height: kitchenHeight
+      },
+      {
+        name: "range burner 1",
+        type: "circle",
+        cx: 265,
+        cy: kitchenY + 7,
+        r: 3
+      },
+      {
+        name: "range burner 2",
+        type: "circle",
+        cx: 265,
+        cy: kitchenY + 15,
+        r: 3
+      },
+      {
+        name: "range burner 3",
+        type: "circle",
+        cx: 275,
+        cy: kitchenY + 15,
+        r: 3
+      },
+      {
+        name: "range burner 4",
+        type: "circle",
+        cx: 275,
+        cy: kitchenY + 7,
+        r: 3
+      },
+      {
+        name: "control-1",
+        type: "circle",
+        cx: 258,
+        cy: kitchenY + 7,
+        r: 1
+      },
+      {
+        name: "control-2",
+        type: "circle",
+        cx: 258,
+        cy: kitchenY + 10,
+        r: 1
+      },
+      {
+        name: "control-3",
+        type: "circle",
+        cx: 258,
+        cy: kitchenY + 13,
+        r: 1
+      },
+      {
+        name: "control-4",
+        type: "circle",
+        cx: 258,
+        cy: kitchenY + 16,
+        r: 1
       }
     ]
   },
@@ -234,9 +290,64 @@ export const furnitureRects = [
         name: "sink rect",
         type: "rectangle",
         x: 255,
-        y: islandY + 5,
+        y: islandY + 7,
         width: 30,
-        height: 20
+        height: 18
+      },
+      {
+        name: "sink faucet",
+        type: "rectangle",
+        x: 269,
+        y: islandY + 7,
+        width: 2,
+        height: 6
+      },
+      {
+        name: "sink drain outer",
+        type: "circle",
+        cx: 270,
+        cy: islandY + 19,
+        r: 2
+      },
+      {
+        name: "sink drain inner",
+        type: "circle",
+        cx: 270,
+        cy: islandY + 19,
+        r: 1
+      }
+    ]
+  },
+  {
+    name: "kitchen stools",
+    shapes: [
+      {
+        name: "stool 1",
+        type: "circle",
+        cx: 185,
+        cy: islandY - 8,
+        r: 4
+      },
+      {
+        name: "stool 2",
+        type: "circle",
+        cx: 195,
+        cy: islandY - 8,
+        r: 4
+      },
+      {
+        name: "stool 3",
+        type: "circle",
+        cx: 205,
+        cy: islandY - 8,
+        r: 4
+      },
+      {
+        name: "stool 4",
+        type: "circle",
+        cx: 215,
+        cy: islandY - 8,
+        r: 4
       }
     ]
   },
@@ -288,7 +399,7 @@ export const furnitureRects = [
       {
         name: "coffee table rect",
         type: "rectangle",
-        x: 237,
+        x: 238,
         y: 92,
         width: 40,
         height: 18
@@ -358,6 +469,25 @@ export const furnitureRects = [
         ry: 3,
         width: 15,
         height: 16
+      }
+    ]
+  },
+  {
+    name: "lamp",
+    shapes: [
+      {
+        name: "lamp outer",
+        type: "circle",
+        cx: 215,
+        cy: 130,
+        r: 7
+      },
+      {
+        name: "lamp inner",
+        type: "circle",
+        cx: 215,
+        cy: 130,
+        r: 4
       }
     ]
   }

@@ -2,12 +2,25 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { bedroomKey } from "../../database/apartments";
 
+import { enableHoverCard } from "../../actions/hovers";
+import { updateHoverXY } from "../../actions/hovers";
+import { disableHoverCard } from "../../actions/hovers";
+
 const addMonths = (date, months) => {
   date.setMonth(date.getMonth() + months);
   return date;
 };
 
 class Bedroom extends Component {
+  
+  // handleHoverEnable = e => {
+  //   this.props.enableHoverCard(this.props.currentApartment, e.target.id);
+  // };
+
+  // handleHoverMove = e => {
+  //   this.props.updateHoverXY(e.clientX, e.clientY);
+  // };
+
   checkFilters = () => {
     const bedroom = this.props.bedroom;
     return this.checkDate(bedroom) && bedroom.rent <= this.props.maxRent;
@@ -26,6 +39,11 @@ class Bedroom extends Component {
     return (
       <Fragment>
         <rect
+          // onMouseEnter={this.handleHoverEnable}
+          // onMouseMove={this.handleHoverMove}
+          // onMouseLeave={this.props.disableHoverCard}
+          id={bedroom.name}
+          className={check ? "bedroom-avail" : "bedroom-not-avail"}
           x={key.x}
           y={key.y}
           width={key.width}
@@ -59,6 +77,7 @@ class Bedroom extends Component {
   };
 
   render() {
+    console.log("bedroom rendered")
     return <Fragment>{this.drawBedroom()}</Fragment>;
   }
 }
@@ -70,7 +89,13 @@ const mapStateToProps = state => ({
   currentApartment: state.apartments.currentApartment
 });
 
+const mapDispatchToProps = dispatch => ({
+  disableHoverCard: () => dispatch(disableHoverCard()),
+  enableHoverCard: (apt, br) => dispatch(enableHoverCard(apt, br)),
+  updateHoverXY: (x, y) => dispatch(updateHoverXY(x, y))
+});
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Bedroom);

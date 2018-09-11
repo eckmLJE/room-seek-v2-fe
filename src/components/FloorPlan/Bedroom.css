@@ -1,0 +1,16 @@
+.bedroom {
+  stroke: rgba(0, 0, 0, 0.514);
+}
+
+.bedroom-avail {
+  fill: #334e6980;
+}
+
+.bedroom-avail:hover {
+  fill: #40607e;
+  cursor: pointer;
+}
+
+.bedroom-not-avail {
+  fill: transparent; 
+}

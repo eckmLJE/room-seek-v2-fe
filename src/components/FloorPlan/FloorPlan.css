@@ -1,0 +1,20 @@
+.floorplan-svg {
+  margin: auto;
+}
+
+.svg-furniture {
+  stroke: rgba(0, 0, 0, 0.514);
+}
+
+.svg-apartment-wall {
+    stroke: rgba(0, 0, 0, 0.514);
+}
+
+.key-text {
+  font-size: 8px;
+ fill: rgba(0, 0, 0, 0.582)
+}
+
+.key-avail {}
+
+.key-unavail {}

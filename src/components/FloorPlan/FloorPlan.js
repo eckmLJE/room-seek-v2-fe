@@ -1,10 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
+import "./FloorPlan.css";
 import { connect } from "react-redux";
 
-import Bedroom from "./floorplan/Bedroom";
+import Bedroom from "./Bedroom";
 // import HoverCard from "./HoverCard";
 
-import { furnitureRects } from "../database/apartments";
+import { furnitureRects } from "../../database/apartments";
 
 class FloorPlan extends Component {
   drawBedrooms = () => {
@@ -18,13 +19,14 @@ class FloorPlan extends Component {
   drawApartment = () => {
     return (
       <rect
+        className="svg-apartment-wall"
         x="135"
         y="65"
         width="200"
         height="170"
         stroke="black"
         fill="transparent"
-        strokeWidth="2"
+        strokeWidth="1"
       />
     );
   };
@@ -54,6 +56,7 @@ class FloorPlan extends Component {
   drawRect = (rect, shapesArray) => {
     shapesArray.push(
       <rect
+        className="svg-furniture"
         key={rect.name}
         x={rect.x}
         y={rect.y}
@@ -63,30 +66,30 @@ class FloorPlan extends Component {
         height={rect.height}
         stroke="black"
         fill="transparent"
-        strokeWidth="1.25"
+        strokeWidth="1"
       />
     );
-    console.log("rectangle drawn");
   };
 
   drawLine = (line, shapesArray) => {
     shapesArray.push(
       <line
+        className="svg-furniture"
         key={line.name}
         x1={line.x1}
         x2={line.x2}
         y1={line.y1}
         y2={line.y2}
         stroke="black"
-        strokeWidth="1.25"
+        strokeWidth="1"
       />
     );
-    console.log("line drawn");
   };
 
   drawCircle = (circ, shapesArray) => {
     shapesArray.push(
       <circle
+        className="svg-furniture"
         key={circ.name}
         cx={circ.cx}
         cy={circ.cy}
@@ -96,7 +99,53 @@ class FloorPlan extends Component {
         fill="transparent"
       />
     );
-    console.log("circle drawn");
+  };
+
+  drawInstructions = () => {
+    const startX = 210;
+    const startY = 20;
+    return (
+      <Fragment>
+        <rect
+          className="key-avail"
+          x={startX}
+          y={startY}
+          width="20"
+          height="20"
+          stroke="black"
+          fill="#334e6980"
+          strokeWidth="1"
+        />
+        <text
+          className="key-text"
+          x={startX + 25}
+          y={startY + 13}
+          fontSize="10"
+          fill="black"
+        >
+          Available
+        </text>
+        <rect
+          className="key-unavail"
+          x={startX + 100}
+          y={startY}
+          width="20"
+          height="20"
+          stroke="black"
+          fill="transparent"
+          strokeWidth="1"
+        />
+        <text
+          className="key-text"
+          x={startX + 125}
+          y={startY + 13}
+          fontSize="10"
+          fill="black"
+        >
+          Not Available
+        </text>
+      </Fragment>
+    );
   };
 
   render() {
@@ -106,6 +155,7 @@ class FloorPlan extends Component {
           {this.drawBedrooms()}
           {this.drawApartment()}
           {this.drawFurniture()}
+          {this.drawInstructions()}
         </svg>
         {/* <HoverCard /> */}
       </div>

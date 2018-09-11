@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import "./FilterBox.css";
 
-import { setCurrentApartment } from "../actions/apartments";
-import { setRentFilter } from "../actions/filters";
-import { setMonthsFilter } from "../actions/filters";
-import { setPetFilter } from "../actions/filters";
+import { setCurrentApartment } from "../../actions/apartments";
+import { setRentFilter } from "../../actions/filters";
+import { setMonthsFilter } from "../../actions/filters";
+import { setPetFilter } from "../../actions/filters";
 
-import { apartments } from "../database/apartments";
+import { apartments } from "../../database/apartments";
 
 class FilterBox extends Component {
   handleAptClick = e => {
@@ -56,27 +57,7 @@ class FilterBox extends Component {
               </select>
             </div>
           </div>
-        </div>
-        <div className="bedroom-detail">
-          {this.props.currentBedroom ? (
-            <div>
-              <h4>Bedroom Detail</h4>
-              <div>
-                Bedroom: {this.props.currentApartment}
-                {this.getBedroomDetail().name}
-              </div>
-              <div>Rent: ${this.getBedroomDetail().rent}</div>
-              <div>Lease Start: {this.getBedroomDetail().start}</div>
-              <div>Term: {this.getBedroomDetail().term} months</div>
-            </div>
-          ) : (
-            <div>
-              <p>Select an Apartment with the numbers to the left</p>
-              <p>Set your Filters</p>
-              <p>Bedrooms that fit the filters are highlighted</p>
-              <p>Click a bedroom to view its details</p>
-            </div>
-          )}
+          <div className="apt-buttons-instruction">Select Apartment</div>
         </div>
       </div>
     );

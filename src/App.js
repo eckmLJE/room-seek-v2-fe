@@ -2,9 +2,8 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import "./App.css";
 
-import HeaderBar from "./components/HeaderBar";
-import FilterBox from "./components/FilterBox";
-import FloorPlan from "./components/FloorPlan";
+import FilterBox from "./components/FilterBox/FilterBox";
+import FloorPlan from "./components/FloorPlan/FloorPlan";
 
 import { apartments } from "./database/apartments";
 
@@ -20,7 +19,6 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <HeaderBar />
         <div className="row">
           {this.props.apartments.length ? (
             <Fragment>

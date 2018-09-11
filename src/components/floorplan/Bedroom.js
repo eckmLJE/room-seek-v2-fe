@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
+import "./Bedroom.css";
+
 import { bedroomKey } from "../../database/apartments";
 
 // import { enableHoverCard } from "../../actions/hovers";
@@ -45,14 +47,15 @@ class Bedroom extends Component {
           // onMouseLeave={this.props.disableHoverCard}
           onClick={() => this.props.setCurrentBedroom(bedroom.name)}
           id={bedroom.name}
-          className={check ? "bedroom-avail" : "bedroom-not-avail"}
+          className={
+            check ? "bedroom bedroom-avail" : "bedroom bedroom-not-avail"
+          }
           x={key.x}
           y={key.y}
           width={key.width}
           height={key.height}
           stroke="black"
-          fill={check ? "#2c3e50" : "transparent"}
-          strokeWidth="2"
+          strokeWidth="1"
         />
         <text
           x={key.x + 10}

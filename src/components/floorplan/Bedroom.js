@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import "./Bedroom.css";
+import "./Bedroom-css.css";
 
 import { bedroomKey } from "../../database/apartments";
 

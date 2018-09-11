@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./FilterBox.css";
+import "./FilterBox-css.css";
 
 import { setCurrentApartment } from "../../actions/apartments";
 import { setRentFilter } from "../../actions/filters";

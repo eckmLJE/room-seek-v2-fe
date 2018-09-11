@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import Bedroom from "./Bedroom";
 // import HoverCard from "./HoverCard";
 
-import { furnitureRects } from "../../database/apartments";
+import { furnitureRects } from "../database/apartments";
 
 class FloorPlan extends Component {
   drawBedrooms = () => {

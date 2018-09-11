@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./FilterBox-css.css";
 
-import { setCurrentApartment } from "../../actions/apartments";
-import { setRentFilter } from "../../actions/filters";
-import { setMonthsFilter } from "../../actions/filters";
-import { setPetFilter } from "../../actions/filters";
+import { setCurrentApartment } from "../actions/apartments";
+import { setRentFilter } from "../actions/filters";
+import { setMonthsFilter } from "../actions/filters";
+import { setPetFilter } from "../actions/filters";
 
-import { apartments } from "../../database/apartments";
+import { apartments } from "../database/apartments";
 
 class FilterBox extends Component {
   handleAptClick = e => {

@@ -2,8 +2,8 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import "./App.css";
 
-import FilterBox from "./components/FilterBox/FilterBox";
-import FloorPlan from "./components/FloorPlan/FloorPlan";
+import FilterBox from "./components/FilterBox";
+import FloorPlan from "./components/FloorPlan";
 
 import { apartments } from "./database/apartments";
 

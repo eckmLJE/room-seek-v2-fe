@@ -2,13 +2,13 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import "./Bedroom-css.css";
 
-import { bedroomKey } from "../../database/apartments";
+import { bedroomKey } from "../database/apartments";
 
 // import { enableHoverCard } from "../../actions/hovers";
 // import { updateHoverXY } from "../../actions/hovers";
 // import { disableHoverCard } from "../../actions/hovers";
 
-import { setCurrentBedroom } from "../../actions/apartments";
+import { setCurrentBedroom } from "../actions/apartments";
 
 const addMonths = (date, months) => {
   date.setMonth(date.getMonth() + months);

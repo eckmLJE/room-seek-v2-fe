@@ -57,7 +57,7 @@ class FilterBox extends Component {
               </select>
             </div>
           </div>
-          <div className="apt-buttons-instruction">Select Apartment</div>
+          <div className="apt-buttons-border" />
         </div>
       </div>
     );

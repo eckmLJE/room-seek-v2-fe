@@ -71,15 +71,17 @@ button {
 }
 
 .filters {
-  margin-left: 245px;
+  margin-left: 190px;
   position: relative;
   padding-top: 7px;
 }
 
-.apt-buttons-instruction {
+.apt-buttons-border {
   padding-left: 30px;
   padding-top: 5px;
   padding-bottom: 15px;
   font-size: 12px;
+  height: 10px;
+  width: 100%;
   border-bottom: 1px solid #2c3e50;
 }

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import "./FloorPlan.css";
 import { connect } from "react-redux";
 
-import Bedroom from "./Bedroom";
+import Bedroom from "./Bedroom.js";
 // import HoverCard from "./HoverCard";
 
 import { furnitureRects } from "../../database/apartments";

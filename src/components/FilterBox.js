@@ -9,6 +9,11 @@ import { setPetFilter } from "../actions/filters";
 
 import { apartments } from "../database/apartments";
 
+const addMonths = (date, months) => {
+  date.setMonth(date.getMonth() + months);
+  return date;
+};
+
 class FilterBox extends Component {
   handleAptClick = e => {
     e.preventDefault();
@@ -23,15 +28,42 @@ class FilterBox extends Component {
     return apartment.bedrooms.find(br => br.name === this.props.currentBedroom);
   };
 
+  checkApartment = id => {
+    const apartment = apartments.find(apt => apt.id === id);
+    return apartment.bedrooms.some(bedroom =>
+      this.checkBedroomFilters(bedroom)
+    );
+  };
+
+  checkBedroomFilters = bedroom => {
+    return this.checkDate(bedroom) && bedroom.rent <= this.props.maxRent;
+  };
+
+  checkDate = bedroom => {
+    let endDate = addMonths(new Date(bedroom.start), bedroom.term);
+    let filterDate = addMonths(new Date(), this.props.months);
+    return endDate <= filterDate ? true : false;
+  };
+
   render() {
+    this.checkApartment(1);
     return (
       <div className="col-1">
         <div className="filters-buttons">
           <div className="apt-buttons" onClick={this.handleAptClick}>
-            <button name="1">1</button>
-            <button name="2">2</button>
-            <button name="3">3</button>
-            <button name="4">4</button>
+            {apartments.map(apartment => (
+              <button
+                key={`apt-${apartment.id}`}
+                name={apartment.id}
+                className={
+                  this.checkApartment(apartment.id)
+                    ? "btn-avail"
+                    : "btn-unavail"
+                }
+              >
+                {apartment.id}
+              </button>
+            ))}
           </div>
           <div className="filters">
             <div className="select-box box-1">
@@ -67,7 +99,10 @@ class FilterBox extends Component {
 const mapStateToProps = state => ({
   apartments: state.apartments.apartments,
   currentBedroom: state.apartments.currentBedroom,
-  currentApartment: state.apartments.currentApartment
+  currentApartment: state.apartments.currentApartment,
+  maxRent: state.filters.maxRent,
+  months: state.filters.months,
+  petFriendly: state.filters.petFriendly
 });
 
 const mapDispatchToProps = dispatch => ({

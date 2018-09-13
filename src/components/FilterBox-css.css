@@ -46,10 +46,17 @@
   outline: none;
 }
 
+.bedroom-detail {
+  margin-left: 200px;
+}
+
+.apt-buttons {
+  padding-top: 10px;
+  padding-left: 20px;
+  float: left;
+}
+
 button {
-  border: 2px solid #2c3e50;
-  width: 30px;
-  color: #2c3e50;
   padding: 5px 5px;
   margin-right: 6px;
   text-align: center;
@@ -60,14 +67,18 @@ button {
   cursor: pointer;
 }
 
-.bedroom-detail {
-  margin-left: 200px;
+.btn-avail {
+  border: 2px solid #2c3e50;
+  width: 30px;
+  color: white;
+  background-color: #334e6980;
 }
 
-.apt-buttons {
-  padding-top: 10px;
-  padding-left: 20px;
-  float: left;
+.btn-unavail {
+  border: 2px solid #2c3e508e;
+  width: 30px;
+  color: #2c3e50;
+  background-color: white;
 }
 
 .filters {

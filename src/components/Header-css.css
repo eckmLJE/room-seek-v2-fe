@@ -1,0 +1,12 @@
+.header {
+  position: relative;
+  text-align: center;
+  padding: 20px 0 0 0;
+  font-size: 0.75em;
+}
+
+.home-link a:link,
+a:visited {
+  color: black;
+  /* text-decoration: none; */
+}

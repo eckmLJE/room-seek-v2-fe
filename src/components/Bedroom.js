@@ -72,7 +72,6 @@ class Bedroom extends Component {
   };
 
   render() {
-    console.log("bedroom rendered");
     return <Fragment>{this.drawBedroom()}</Fragment>;
   }
 }

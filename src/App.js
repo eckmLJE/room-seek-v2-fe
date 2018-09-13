@@ -4,6 +4,7 @@ import "./App.css";
 
 import FilterBox from "./components/FilterBox";
 import FloorPlan from "./components/FloorPlan";
+import Header from "./components/Header";
 
 import { apartments } from "./database/apartments";
 
@@ -19,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <Header />
         <div className="row">
           {this.props.apartments.length ? (
             <Fragment>

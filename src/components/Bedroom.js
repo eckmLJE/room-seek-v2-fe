@@ -1,12 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import "./Bedroom-css.css";
+import moment from "moment";
 
 import { bedroomKey } from "../database/apartments";
-
-// import { enableHoverCard } from "../../actions/hovers";
-// import { updateHoverXY } from "../../actions/hovers";
-// import { disableHoverCard } from "../../actions/hovers";
 
 import { setCurrentBedroom } from "../actions/apartments";
 
@@ -16,14 +13,6 @@ const addMonths = (date, months) => {
 };
 
 class Bedroom extends Component {
-  // handleHoverEnable = e => {
-  //   this.props.enableHoverCard(this.props.currentApartment, e.target.id);
-  // };
-
-  // handleHoverMove = e => {
-  //   this.props.updateHoverXY(e.clientX, e.clientY);
-  // };
-
   checkFilters = () => {
     const bedroom = this.props.bedroom;
     return this.checkDate(bedroom) && bedroom.rent <= this.props.maxRent;
@@ -42,9 +31,9 @@ class Bedroom extends Component {
     return (
       <Fragment>
         <rect
-          // onMouseEnter={this.handleHoverEnable}
-          // onMouseMove={this.handleHoverMove}
-          // onMouseLeave={this.props.disableHoverCard}
+          onMouseEnter={this.enableHover}
+          onMouseLeave={this.disableHover}
+          onMouseMove={this.handleHover}
           onClick={() => this.props.setCurrentBedroom(bedroom.name)}
           id={bedroom.name}
           className={
@@ -60,12 +49,30 @@ class Bedroom extends Component {
         <text
           x={key.x + 10}
           y={key.y + 25}
-          fontFamily="Verdana"
-          fontSize="16"
+          fontSize="12"
           fill={check ? "white" : "#2c3e50"}
         >
           {this.props.currentApartment}
           {bedroom.name}
+        </text>
+        <text
+          x={key.x + 10}
+          y={key.y + 40}
+          fontSize="10"
+          fill={check ? "white" : "#2c3e50"}
+        >
+          ${bedroom.rent} / mo.
+        </text>
+        <text
+          x={key.x + 10}
+          y={key.y + 55}
+          fontSize="8"
+          fill={check ? "white" : "#2c3e50"}
+        >
+          Available:{" "}
+          {moment(addMonths(new Date(bedroom.start), bedroom.term))
+            .add(1, "days")
+            .calendar()}
         </text>
       </Fragment>
     );
@@ -85,9 +92,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setCurrentBedroom: br => dispatch(setCurrentBedroom(br))
-  // disableHoverCard: () => dispatch(disableHoverCard()),
-  // enableHoverCard: (apt, br) => dispatch(enableHoverCard(apt, br)),
-  // updateHoverXY: (x, y) => dispatch(updateHoverXY(x, y))
 });
 
 export default connect(

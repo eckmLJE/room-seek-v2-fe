@@ -6,7 +6,7 @@ export const apartments = [
       {
         name: "a",
         rent: 900,
-        start: "2017-10-01",
+        start: "2018-02-01",
         term: 12
       },
       {
@@ -54,13 +54,13 @@ export const apartments = [
       {
         name: "c",
         rent: 1100,
-        start: "2017-10-01",
+        start: "2017-11-01",
         term: 12
       },
       {
         name: "d",
         rent: 1200,
-        start: "2018-01-01",
+        start: "2018-03-01",
         term: 9
       },
       {
@@ -90,13 +90,13 @@ export const apartments = [
       {
         name: "c",
         rent: 1250,
-        start: "2017-10-01",
+        start: "2017-12-01",
         term: 12
       },
       {
         name: "d",
         rent: 1250,
-        start: "2018-01-01",
+        start: "2018-02-01",
         term: 9
       },
       {
@@ -127,13 +127,13 @@ export const apartments = [
         name: "c",
         rent: 1350,
         start: "2017-10-01",
-        term: 12
+        term: 18
       },
       {
         name: "d",
         rent: 1350,
         start: "2018-01-01",
-        term: 9
+        term: 12
       },
       {
         name: "e",

@@ -4,8 +4,8 @@ const processStringBool = bool => {
 
 const filtersReducer = (
   state = {
-    maxRent: 3000,
-    months: 6,
+    maxRent: 1000,
+    months: 1,
     petFriendly: "true"
   },
   action

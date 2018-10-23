@@ -1,8 +1,19 @@
 .header {
   position: relative;
-  text-align: center;
   padding: 20px 0 0 0;
   font-size: 0.75em;
+  width: 60%;
+  min-width: 375px;
+  margin: auto;
+}
+
+.header h1 {
+  text-align: center;
+}
+
+.header p {
+  text-align: start;
+  font-size: 1.2em;
 }
 
 .home-link a:link,

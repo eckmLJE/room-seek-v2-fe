@@ -65,6 +65,7 @@ button {
   font-size: 15px;
   line-height: 20px;
   cursor: pointer;
+  /* outline: none; */
 }
 
 .btn-avail {

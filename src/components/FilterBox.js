@@ -18,7 +18,7 @@ class FilterBox extends Component {
   handleAptClick = e => {
     e.preventDefault();
     const id = parseInt(e.target.name, 10);
-    this.props.setCurrentApartment(id);
+    if (id) this.props.setCurrentApartment(id);
   };
 
   getBedroomDetail = () => {
@@ -68,18 +68,18 @@ class FilterBox extends Component {
           <div className="filters">
             <div className="select-box box-1">
               <select onChange={e => this.props.setRentFilter(e.target.value)}>
-                <option value="1500">$1,500 or Less</option>
-                <option value="1250">$1,250 or Less</option>
                 <option value="1000">$1,000 or Less</option>
+                <option value="1250">$1,250 or Less</option>
+                <option value="1500">$1,500 or Less</option>
               </select>
             </div>
             <div className="select-box box-2">
               <select
                 onChange={e => this.props.setMonthsFilter(e.target.value)}
               >
-                <option value="6">Within 6 Months</option>
-                <option value="3">Within 3 Months</option>
                 <option value="1">Within 1 Month</option>
+                <option value="3">Within 3 Months</option>
+                <option value="6">Within 6 Months</option>
               </select>
             </div>
             <div className="select-box box-3">

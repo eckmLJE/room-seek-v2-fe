@@ -4,9 +4,13 @@ import "./Header-css.css";
 const Header = () => {
   return (
     <div className="header">
-      <div className="home-link">
-        {/* <a href="http://www.lucaseckman.com">RETURN TO LUCASECKMAN.COM</a> */}
-      </div>
+      <h1>Welcome to RoomSeek!</h1>
+      <p>This apartment building has four apartments.</p>
+      <p>Each apartment has five bedrooms that can be leased separately.</p>
+      <p>
+        Set the rent, move-in date and pet-friendly filters to find a bedroom
+        that suits your needs!
+      </p>
     </div>
   );
 };

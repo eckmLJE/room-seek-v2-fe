@@ -5,7 +5,10 @@ const Header = () => {
   return (
     <div className="header">
       <h1>Welcome to RoomSeek!</h1>
-      <p>This apartment building has four apartments.</p>
+      <p>
+        This apartment building has four apartments. Click 1 through 4 to view
+        each apartment.
+      </p>
       <p>Each apartment has five bedrooms that can be leased separately.</p>
       <p>
         Set the rent, move-in date and pet-friendly filters to find a bedroom
